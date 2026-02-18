@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 69934e1c5cd77267237bde90
+          image: trial5w1bmb.jfrog.io/docker-trial/test1:{{opsera-gh_docker_tag}}
           ports:
             - containerPort: 8072
           env:
