@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: prod-namespace
+  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-demo
+  namespace: prod-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: back-end
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/rollback-argo-test:rollback-argo
+          ports:
+            - containerPort: 8072
+          env:
+          - name: DOCKER_ENV
+            value: "dev"
+
+---
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: argo-demo
+  name: argo-demo
+  namespace: prod-namespace
+spec:
+  ports:
+  - name: http
+    port: 8072
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: web
+  sessionAffinity: None
+  type: LoadBalancer
+
+---

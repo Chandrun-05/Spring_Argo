@@ -1,0 +1,115 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-demo
+  namespace: argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: back-end
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/opsera-nexus-integrator:v2
+          ports:
+            - containerPort: 8072
+          env:
+            - name: DOCKER_ENV
+              value: "dev"
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: argo-demo
+  labels:
+    app: argo-demo
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: back-end
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/opsera-nexus-integrator:v2
+          env:
+            - name: DOCKER_ENV
+              value: "dev"
+          resources:
+            requests:
+              cpu: 25m
+              memory: 50Mi
+            limits:
+              cpu: 150m
+              memory: 150Mi
+          ports:
+            - containerPort: 8072
+  strategy:
+    canary:
+      stableService: rargo-demo-statble
+      canaryService: argo-demo-canary
+      #trafficRouting:
+      #nginx:
+      #stableIngress: realtimeapp-ingress
+      steps:
+        - setWeight: 50
+        - pause: {}
+
+---
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: argo-demo
+  name: argo-demo-statble
+  namespace: argocd
+spec:
+  ports:
+    - name: http
+      port: 8072
+      protocol: TCP
+      targetPort: http
+  selector:
+    app: web
+  sessionAffinity: None
+  type: NodePort
+
+---
+# Ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  labels:
+    app.kubernetes.io/name: argo-demo
+  name: argo-demo
+  namespace: argocd
+spec:
+  rules:
+    - host: argocd.nawaz-demo.opsera.io
+      http:
+        paths:
+          - backend:
+              serviceName: argo-demo
+              servicePort: 8072
+            path: /
+---
+
