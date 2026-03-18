@@ -16,17 +16,13 @@ jobs:
           OPSERA_URL: https://app.opsera.io
           PIPELINE_ID: 69895b4714eff3fcd03f6775
           OPSERA_TOKEN: ${{ secrets.OPSERA_TOKEN }}
-          BRANCH: ${{ github.ref_name }}
-          COMMIT_ID: ${{ github.sha }}
-          REPOSITORY: ${{ github.repository }}
+          
         run: |
           set -euo pipefail
 
           echo "Triggering Opsera pipeline..."
           echo "PipelineId: ${PIPELINE_ID}"
-          echo "Branch: ${BRANCH}"
-          echo "Commit: ${COMMIT_ID}"
-          echo "Repo: ${REPOSITORY}"
+        
 
           curl -sS --fail-with-body -v -X POST "${OPSERA_URL}/api/v1/pipeline/run" \
             -H "Authorization: Bearer ${OPSERA_TOKEN}" \
