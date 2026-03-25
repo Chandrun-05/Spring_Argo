@@ -3,3 +3,11 @@ dynamic push/22jan26
 1
 "sync test clean" 
 2
+3
+4
+tar
+base
+from base
+from tar
+from base
+pr apr from base
