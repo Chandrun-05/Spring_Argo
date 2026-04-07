@@ -2,16 +2,7 @@ name: Toggle Opsera GithubActions Step
 
 on:
   workflow_dispatch:
-    inputs:
-      enable_step:
-        description: "Enable GithubActions step (true/false)"
-        required: true
-        default: "true"
-        type: choice
-        options:
-          - "true"
-          - "false"
-
+   
 jobs:
   update-pipeline:
     runs-on: ubuntu-latest
