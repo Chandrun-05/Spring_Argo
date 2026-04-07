@@ -52,7 +52,7 @@ jobs:
                     "_id": "69d48b59069da7ea169c3384",
                     "name": "GithubActions1",
                     "type": ["git_automation"],
-                    "active": true,
+                    "active": false,
                     "tool": {
                       "tool_identifier": "github_actions_workflow",
                       "configuration": {
@@ -68,7 +68,7 @@ jobs:
                     "_id": "5ec7c8cedc73d971e2860b68",
                     "name": "GithubActions",
                     "type": ["git_automation"],
-                    "active": ${{ fromJSON(github.event.inputs.enable_step) }},
+                    "active": true,
                     "tool": {
                       "tool_identifier": "github_actions_workflow",
                       "configuration": {
