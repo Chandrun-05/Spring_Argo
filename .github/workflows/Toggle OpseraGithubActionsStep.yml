@@ -15,65 +15,73 @@ on:
 jobs:
   update-pipeline:
     runs-on: ubuntu-latest
-
     steps:
       - name: Update Opsera Pipeline
-        env:
-          ENABLE_STEP: ${{ github.event.inputs.enable_step }}
         run: |
           curl -X POST "https://app.opsera.io/api/v2/actions" \
-            -H "Content-Type: application/json" \
-            -H "Authorization: Bearer ${{ secrets.OPSERA_TOKEN }}" \
-            -d '{
-              "action": "update",
-              "type": "pipeline",
-              "version": "1",
-              "target": ["69d46537df09ae229b09243b"],
-              "settings": {
-                "name": "NC_GH_Actions",
-                "description": "Create a new template from scratch.",
-                "owner": "67d2c7c8a9ae2fbc474a5071",
-                "organizationName": "opsera protonmail test account",
-                "account": "org109-acc",
-                "project": {
-                  "name": "",
-                  "project_id": ""
-                },
-                "workflow": {
-                  "source": {
-                    "name": "",
-                    "service": "",
-                    "repository": "",
-                    "branch": "",
-                    "key": "",
-                    "trigger_active": false,
-                    "secondary_branches": []
-                  },
-                  "plan": [
-                    {
-                      "_id": "5ec7c8cedc73d971e2860b68",
-                      "name": "GithubActions",
-                      "type": ["git_automation"],
-                      "active": ${{ fromJSON(github.event.inputs.enable_step) }},
-                      "tool": {
-                        "tool_identifier": "github_actions_workflow",
-                        "configuration": {
-                          "toolId": "699da3d86e65cd2015b7d56d",
-                          "repositoryId": "Chandrun-05/Spring_Argo",
-                          "branchOrTagName": "main",
-                          "workflowId": "247865283",
-                          "job": "",
-                          "inputs": {}
-                        }
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer ${{ secrets.OPSERA_TOKEN }}" \
+          -d '{
+            "action": "update",
+            "type": "pipeline",
+            "version": "1",
+            "target": ["69d46537df09ae229b09243b"],
+            "settings": {
+              "name": "NC_GH_Actions",
+              "organizationName": "opsera protonmail test account",
+              "account": "org109-acc",
+              "workflow": {
+                "plan": [
+                  {
+                    "_id": "69d48b4d95bd064a220347af",
+                    "name": "GithubActions2",
+                    "type": ["git_automation"],
+                    "active": true,
+                    "tool": {
+                      "tool_identifier": "github_actions_workflow",
+                      "configuration": {
+                        "toolId": "699da3d86e65cd2015b7d56d",
+                        "repositoryId": "Chandrun-05/Spring_Argo",
+                        "branchOrTagName": "main",
+                        "workflowId": "247865283",
+                        "job": ""
                       }
                     }
-                  ],
-                  "schedule": {
-                    "start_date": null,
-                    "end_date": null,
-                    "frequency": ""
+                  },
+                  {
+                    "_id": "69d48b59069da7ea169c3384",
+                    "name": "GithubActions1",
+                    "type": ["git_automation"],
+                    "active": true,
+                    "tool": {
+                      "tool_identifier": "github_actions_workflow",
+                      "configuration": {
+                        "toolId": "699da3d86e65cd2015b7d56d",
+                        "repositoryId": "Chandrun-05/Spring_Argo",
+                        "branchOrTagName": "main",
+                        "workflowId": "247865283",
+                        "job": ""
+                      }
+                    }
+                  },
+                  {
+                    "_id": "5ec7c8cedc73d971e2860b68",
+                    "name": "GithubActions",
+                    "type": ["git_automation"],
+                    "active": ${{ fromJSON(github.event.inputs.enable_step) }},
+                    "tool": {
+                      "tool_identifier": "github_actions_workflow",
+                      "configuration": {
+                        "toolId": "699da3d86e65cd2015b7d56d",
+                        "repositoryId": "Chandrun-05/Spring_Argo",
+                        "branchOrTagName": "main",
+                        "workflowId": "247865283",
+                        "job": ""
+                      }
+                    }
                   }
-                },
-                "active": true
-              }
-            }'
+                ]
+              },
+              "active": true
+            }
+          }'
