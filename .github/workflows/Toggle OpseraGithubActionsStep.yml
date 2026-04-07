@@ -27,7 +27,7 @@ jobs:
                     "_id": "69d48b4d95bd064a220347af",
                     "name": "GithubActions2",
                     "type": ["git_automation"],
-                    "active": true,
+                    "active": false,  // set to false -> Disable 
                     "tool": {
                       "tool_identifier": "github_actions_workflow",
                       "configuration": {
