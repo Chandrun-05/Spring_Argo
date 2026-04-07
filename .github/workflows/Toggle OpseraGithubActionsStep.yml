@@ -1,0 +1,79 @@
+name: Toggle Opsera GithubActions Step
+
+on:
+  workflow_dispatch:
+    inputs:
+      enable_step:
+        description: "Enable GithubActions step (true/false)"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+jobs:
+  update-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Update Opsera Pipeline
+        env:
+          ENABLE_STEP: ${{ github.event.inputs.enable_step }}
+        run: |
+          curl -X POST "https://app.opsera.io/api/v2/actions" \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer ${{ secrets.OPSERA_TOKEN }}" \
+            -d '{
+              "action": "update",
+              "type": "pipeline",
+              "version": "1",
+              "target": ["69d46537df09ae229b09243b"],
+              "settings": {
+                "name": "NC_GH_Actions",
+                "description": "Create a new template from scratch.",
+                "owner": "67d2c7c8a9ae2fbc474a5071",
+                "organizationName": "opsera protonmail test account",
+                "account": "org109-acc",
+                "project": {
+                  "name": "",
+                  "project_id": ""
+                },
+                "workflow": {
+                  "source": {
+                    "name": "",
+                    "service": "",
+                    "repository": "",
+                    "branch": "",
+                    "key": "",
+                    "trigger_active": false,
+                    "secondary_branches": []
+                  },
+                  "plan": [
+                    {
+                      "_id": "5ec7c8cedc73d971e2860b68",
+                      "name": "GithubActions",
+                      "type": ["git_automation"],
+                      "active": ${{ fromJSON(github.event.inputs.enable_step) }},
+                      "tool": {
+                        "tool_identifier": "github_actions_workflow",
+                        "configuration": {
+                          "toolId": "699da3d86e65cd2015b7d56d",
+                          "repositoryId": "Chandrun-05/Spring_Argo",
+                          "branchOrTagName": "main",
+                          "workflowId": "247865283",
+                          "job": "",
+                          "inputs": {}
+                        }
+                      }
+                    }
+                  ],
+                  "schedule": {
+                    "start_date": null,
+                    "end_date": null,
+                    "frequency": ""
+                  }
+                },
+                "active": true
+              }
+            }'
