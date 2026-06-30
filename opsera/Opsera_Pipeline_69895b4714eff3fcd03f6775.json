@@ -1,0 +1,868 @@
+{
+  "_id": "69895b4714eff3fcd03f6775",
+  "name": "NC_CL",
+  "description": "Create a new template from scratch.",
+  "owner": "67d2c7c8a9ae2fbc474a5071",
+  "roles": [
+    {
+      "role": "manager",
+      "user": "nchandru360@proton.me",
+      "site_role": "",
+      "group": ""
+    },
+    {
+      "role": "user",
+      "user": "",
+      "site_role": "",
+      "group": "bt-gtm-developers"
+    }
+  ],
+  "tags": [],
+  "type": [
+    "sdlc"
+  ],
+  "organizationName": "opsera protonmail test account",
+  "account": "org109-acc",
+  "project": {
+    "name": "",
+    "project_id": ""
+  },
+  "workflow": {
+    "source": {
+      "name": "",
+      "service": "github",
+      "accountId": "699da3d86e65cd2015b7d56d",
+      "workspace": "",
+      "workspaceName": "",
+      "repository": "Spring_Argo",
+      "repoId": "Chandrun-05/Spring_Argo",
+      "projectId": "Chandrun-05/Spring_Argo",
+      "gitUrl": "https://github.com/Chandrun-05/Spring_Argo",
+      "sshUrl": "git@github.com:Chandrun-05/Spring_Argo.git",
+      "branch": "main",
+      "secondary_branches": [],
+      "key": {
+        "name": "Vault Secured Key",
+        "vaultKey": "69895b4714eff3fcd03f6775-webhook-secret"
+      },
+      "trigger_active": true,
+      "isPushEvent": false,
+      "isPrEvent": true,
+      "isMonitored": true,
+      "sendStepUpdates": true,
+      "prCreatedEvent": true,
+      "prApprovedEvent": false,
+      "gitExportEnabled": true,
+      "gitExportPath": "opsera",
+      "dynamicSettings": true,
+      "allowDynamicSettingsInUi": true,
+      "allowPipelineParametersInUi": true,
+      "allowDynamicSettingsInSalesforceUi": false,
+      "enableBranchSwitch": false,
+      "opseraEdgeToolId": "",
+      "useOpseraEdgeProxy": false,
+      "baselineFromSuccessfulRun": false,
+      "branch_pattern": [],
+      "autoPopulateToSteps": true,
+      "isPathFilterEnabled": false,
+      "include_paths": [],
+      "exclude_paths": []
+    },
+    "schedule": {
+      "start_date": null,
+      "end_date": null,
+      "frequency": ""
+    },
+    "last_step": {
+      "status": "stopped",
+      "check_count": 3,
+      "step_id": "5ec7c8cedc73d971e2860b68"
+    },
+    "last_run": {
+      "status": "success",
+      "completed": "2026-06-30T13:41:57.202Z",
+      "run_count": 105
+    },
+    "plan": [
+      {
+        "tool": {
+          "tool_identifier": "command-line",
+          "configuration": {
+            "type": "github",
+            "jobType": "SHELL SCRIPT",
+            "toolConfigId": "639e4b01d9e98f00123b5c1d",
+            "toolName": "Jenkins Account test DO NOT DELETE",
+            "jobName": "SHELL_SCRIPT_V2_69895b4714eff3fcd03f6775_6a3d0466f79023bd013bc491",
+            "toolJobId": "68b556d60e0ef2c1f2c3328f",
+            "projectId": "",
+            "buildType": "others",
+            "gitToolId": "699da3d86e65cd2015b7d56d",
+            "repoId": "Chandrun-05/Spring_Argo",
+            "gitUrl": "https://github.com/Chandrun-05/Spring_Argo",
+            "sshUrl": "",
+            "service": "github",
+            "gitCredential": "699da3d86e65cd2015b7d56d",
+            "workspace": "",
+            "workspaceName": "",
+            "repository": "Spring_Argo",
+            "gitBranch": "main",
+            "agentLabels": "generic-linux",
+            "autoScaleEnable": true,
+            "outputPath": "",
+            "outputFileName": "",
+            "dependencyType": "",
+            "workspaceDeleteFlag": false,
+            "sourceScript": false,
+            "inputPath": "",
+            "inputFileName": "",
+            "relativePath": "",
+            "commands": "echo \"Pipeline: parameters\"\necho \"--------------------------------------\"\necho \"Release Name: $ opsera_release_name\"\necho \"Release Name: $ opsera_release_name2\"\necho \"Release Name: ${opsera_stg_release_name}\"\necho \"Release Name: ${opsera_rc_release_name}\"\necho \"Sephora: ${opsera-nc_test}\"\necho \"Pipeline A: $opsera_inputparam\"\necho \"values: $opsera_multipara\"\nexport opsera-nc_test=\"$opsera-nc_test\"",
+            "terraformStepId": "",
+            "customParameters": [],
+            "outputCustomParameters": [
+              {
+                "parameterId": "6a3d00b85148d1f739bb118e",
+                "parameterName": "opsera-nc_test"
+              }
+            ],
+            "stepParameters": [],
+            "useTerraformOutput": false,
+            "sonarScanFlag": false,
+            "saveSonarParameters": false,
+            "sonarCustomParameters": [],
+            "sonarToolConfigId": "",
+            "projectKey": "",
+            "saveEnvironmentVariables": true,
+            "environmentVariables": [],
+            "clientSideThreshold": false,
+            "thresholdCompliance": [],
+            "thresholdRating": [],
+            "reportDetailsFlag": false,
+            "reportPath": "",
+            "reportFileName": "",
+            "scriptType": "inline",
+            "scriptId": "",
+            "overrideStartWorkflowValues": false,
+            "useStartWorkflowValues": false,
+            "scriptFileName": "",
+            "toolJobName": "shell",
+            "toolJobType": "",
+            "gitCommitId": "bc7f75e0b46710b83fae195308212a323cfd0f38",
+            "isJenkinsStepEntitlementEnabled": false,
+            "commandLineExecutionEngine": "jenkins"
+          },
+          "threshold": {
+            "type": "",
+            "value": ""
+          },
+          "job": null,
+          "job_type": "shell script"
+        },
+        "last_status": {
+          "data": {
+            "jenkinsConsoleLog": "",
+            "buildTime": "2026-06-30 01.01 PM",
+            "runCount": 100,
+            "action": "START",
+            "gitCommitId": "bc7f75e0b46710b83fae195308212a323cfd0f38",
+            "hasDowloadableReport": false,
+            "gitUrl": "https://github.com/Chandrun-05/Spring_Argo",
+            "gitBranch": "main",
+            "repository": "Spring_Argo",
+            "status": "SUCCESS",
+            "message": "Job is Successful",
+            "buildNumber": 4,
+            "jobName": "SHELL_SCRIPT_V2_69895b4714eff3fcd03f6775_6a3d0466f79023bd013bc491"
+          },
+          "updatedAt": "2026-06-30T13:02:40.085Z"
+        },
+        "name": "Copy of parameter details",
+        "notes": "",
+        "trigger": [],
+        "type": [
+          "script"
+        ],
+        "orchestration_type": "standard",
+        "notification": [
+          {
+            "type": "email",
+            "addresses": [
+              "chandru.nallasivam@opsera.io"
+            ],
+            "event": "error",
+            "enabled": true,
+            "logEnabled": false,
+            "notifyTriggeredUser": false,
+            "manifestAttachment": {
+              "enabled": false,
+              "format": "json"
+            }
+          },
+          {
+            "type": "slack",
+            "channel": "",
+            "toolId": "",
+            "event": "finished",
+            "enabled": false,
+            "logEnabled": false
+          },
+          {
+            "type": "jira",
+            "event": "all",
+            "jiraBoard": "",
+            "jiraToolId": "",
+            "jiraProject": "",
+            "jiraPriority": "",
+            "jiraSprint": "",
+            "jiraParentTicket": "",
+            "jiraPrimaryAssignee": "",
+            "jiraSecondaryAssignees": [],
+            "jiraOpenStep": "",
+            "jiraClosureStep": "",
+            "enabled": false
+          },
+          {
+            "type": "teams",
+            "event": "all",
+            "toolId": "",
+            "enabled": false,
+            "logEnabled": false,
+            "teamsType": "webhook",
+            "teamsId": "",
+            "teamsName": "",
+            "channelId": "",
+            "channelName": ""
+          },
+          {
+            "type": "servicenow",
+            "event": "all",
+            "toolId": "",
+            "serviceNowUserId": "",
+            "serviceNowGroupId": "",
+            "enabled": false
+          },
+          {
+            "type": "gchat",
+            "event": "all",
+            "toolId": "",
+            "enabled": false,
+            "logEnabled": false
+          },
+          {
+            "type": "azure",
+            "event": "all",
+            "enabled": false,
+            "logEnabled": false,
+            "azureBoardId": "",
+            "azureBoardName": "",
+            "azureToolId": "",
+            "azureTeamId": "",
+            "azureTeamName": "",
+            "azureProjectName": "",
+            "azureProjectId": "",
+            "azurePriority": "",
+            "azureSprint": "",
+            "azureSprintId": "",
+            "azureWorkType": "",
+            "azureParentTicket": "",
+            "azurePrimaryAssignee": ""
+          },
+          {
+            "type": "github",
+            "event": "all",
+            "enabled": false,
+            "logEnabled": false,
+            "toolId": "",
+            "githubLabels": [],
+            "assignees": [],
+            "githubRepositoryId": "",
+            "githubIssueType": "",
+            "githubParentIssueId": ""
+          },
+          {
+            "type": "reports",
+            "enabled": false,
+            "reportFormats": [
+              "excel",
+              "pdf"
+            ],
+            "sendWhen": "success",
+            "applyTo": "security_scans",
+            "sendViaEmail": false,
+            "emailRecipients": [],
+            "includeCommitterEmails": false,
+            "emailSubject": "",
+            "emailMessage": "",
+            "sendViaSlack": false,
+            "slackToolId": "",
+            "slackChannels": [],
+            "sendViaTeams": false,
+            "teamsToolId": "",
+            "attachToJira": false,
+            "jiraToolId": "",
+            "attachToServiceNow": false,
+            "serviceNowToolId": ""
+          }
+        ],
+        "tags": [],
+        "active": false,
+        "dependencies": [
+          "5ec7c8cedc73d971e2860b68"
+        ],
+        "updatedAt": "2026-06-25T10:35:18.941Z",
+        "_id": "6a3d0466f79023bd013bc491"
+      },
+      {
+        "tool": {
+          "tool_identifier": "apm_log_monitoring",
+          "configuration": {
+            "apmToolType": "newrelic",
+            "apmToolId": "69620e0207bc959221497b3d",
+            "accountId": 4249466,
+            "query": "SELECT * FROM Log WHERE level = 'ERROR' AND cluster_name = 'prod-controlplane' SINCE 60 minutes ago",
+            "autoRollbackEnabled": false,
+            "deploymentStepId": "",
+            "apmThreshold": {
+              "errorCount": 1
+            }
+          },
+          "job": null
+        },
+        "name": "New relic",
+        "description": "",
+        "trigger": [],
+        "type": [
+          "build"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": false,
+        "dependencies": [
+          "6a3d0466f79023bd013bc491"
+        ],
+        "updatedAt": "2026-06-29T08:44:24.473Z",
+        "_id": "6a423068a3406c2bc4ab351b"
+      },
+      {
+        "tool": {
+          "tool_identifier": "command-line",
+          "configuration": {
+            "type": "github",
+            "jobType": "SHELL SCRIPT",
+            "toolConfigId": "639e4b01d9e98f00123b5c1d",
+            "toolName": "Jenkins Account test DO NOT DELETE",
+            "jobName": "SHELL_SCRIPT_V2_69895b4714eff3fcd03f6775_5ec7c8cedc73d971e2860b68",
+            "toolJobId": "68b556d60e0ef2c1f2c3328f",
+            "projectId": "",
+            "buildType": "others",
+            "gitToolId": "699da3d86e65cd2015b7d56d",
+            "repoId": "Chandrun-05/Spring_Argo",
+            "gitUrl": "https://github.com/Chandrun-05/Spring_Argo",
+            "sshUrl": "",
+            "service": "github",
+            "gitCredential": "699da3d86e65cd2015b7d56d",
+            "workspace": "",
+            "workspaceName": "",
+            "repository": "Spring_Argo",
+            "gitBranch": "main",
+            "agentLabels": "generic-linux",
+            "autoScaleEnable": true,
+            "outputPath": "",
+            "outputFileName": "",
+            "dependencyType": "",
+            "workspaceDeleteFlag": false,
+            "sourceScript": false,
+            "inputPath": "",
+            "inputFileName": "",
+            "relativePath": "",
+            "commands": "echo \"Pipeline: parameters\"\necho \"--------------------------------------\"\necho \"Release Name: $ opsera_release_name\"\necho \"Release Name: $ opsera_release_name2\"\necho \"Release Name: ${opsera_stg_release_name}\"\necho \"Release Name: ${opsera_rc_release_name}\"\necho \"Sephora: ${opsera-nc_test}\"\necho \"Pipeline A: $opsera_inputparam\"\necho \"values: $opsera_multipara\"\nexport opsera-nc_test=\"$opsera-nc_test\"",
+            "terraformStepId": "",
+            "customParameters": [
+              {
+                "parameterId": "6a33cf771d0cc6a404056ccc",
+                "parameterName": "opsera-multipara"
+              },
+              {
+                "parameterName": "opsera-rc-release-name",
+                "parameterId": "6a2232738f44cfe17ccbe63b"
+              },
+              {
+                "parameterName": "opsera-stg-release-name",
+                "parameterId": "6a22325d8f44cfe17ccbe61e"
+              }
+            ],
+            "outputCustomParameters": [
+              {
+                "parameterId": "6a3d00b85148d1f739bb118e",
+                "parameterName": "opsera-nc_test"
+              }
+            ],
+            "stepParameters": [],
+            "useTerraformOutput": false,
+            "sonarScanFlag": false,
+            "saveSonarParameters": false,
+            "sonarCustomParameters": [],
+            "sonarToolConfigId": "",
+            "projectKey": "",
+            "saveEnvironmentVariables": false,
+            "environmentVariables": [],
+            "clientSideThreshold": false,
+            "thresholdCompliance": [],
+            "thresholdRating": [],
+            "reportDetailsFlag": false,
+            "reportPath": "",
+            "reportFileName": "",
+            "scriptType": "inline",
+            "scriptId": "",
+            "overrideStartWorkflowValues": false,
+            "useStartWorkflowValues": false,
+            "scriptFileName": "",
+            "toolJobName": "shell",
+            "toolJobType": "",
+            "gitCommitId": "bc7f75e0b46710b83fae195308212a323cfd0f38",
+            "isJenkinsStepEntitlementEnabled": false,
+            "commandLineExecutionEngine": "jenkins"
+          },
+          "threshold": {
+            "type": "",
+            "value": ""
+          },
+          "job": null,
+          "job_type": "shell script"
+        },
+        "last_status": {
+          "data": {
+            "jenkinsConsoleLog": "",
+            "buildTime": "2026-06-30 01.40 PM",
+            "runCount": 105,
+            "action": "START",
+            "gitCommitId": "bc7f75e0b46710b83fae195308212a323cfd0f38",
+            "hasDowloadableReport": false,
+            "gitUrl": "https://github.com/Chandrun-05/Spring_Argo",
+            "gitBranch": "main",
+            "repository": "Spring_Argo",
+            "status": "SUCCESS",
+            "message": "Job is Successful",
+            "buildNumber": 29,
+            "jobName": "SHELL_SCRIPT_V2_69895b4714eff3fcd03f6775_5ec7c8cedc73d971e2860b68"
+          },
+          "updatedAt": "2026-06-30T13:41:45.285Z"
+        },
+        "name": "parameter details",
+        "trigger": [],
+        "type": [
+          "script"
+        ],
+        "notification": [
+          {
+            "type": "email",
+            "addresses": [
+              "chandru.nallasivam@opsera.io"
+            ],
+            "event": "error",
+            "enabled": true,
+            "logEnabled": false,
+            "notifyTriggeredUser": false,
+            "manifestAttachment": {
+              "enabled": false,
+              "format": "json"
+            }
+          },
+          {
+            "type": "slack",
+            "channel": "",
+            "toolId": "",
+            "event": "finished",
+            "enabled": false,
+            "logEnabled": false
+          },
+          {
+            "type": "jira",
+            "event": "all",
+            "jiraBoard": "",
+            "jiraToolId": "",
+            "jiraProject": "",
+            "jiraPriority": "",
+            "jiraSprint": "",
+            "jiraParentTicket": "",
+            "jiraPrimaryAssignee": "",
+            "jiraSecondaryAssignees": [],
+            "jiraOpenStep": "",
+            "jiraClosureStep": "",
+            "enabled": false
+          },
+          {
+            "type": "teams",
+            "event": "all",
+            "toolId": "",
+            "enabled": false,
+            "logEnabled": false,
+            "teamsType": "webhook",
+            "teamsId": "",
+            "teamsName": "",
+            "channelId": "",
+            "channelName": ""
+          },
+          {
+            "type": "servicenow",
+            "event": "all",
+            "toolId": "",
+            "serviceNowUserId": "",
+            "serviceNowGroupId": "",
+            "enabled": false
+          },
+          {
+            "type": "gchat",
+            "event": "all",
+            "toolId": "",
+            "enabled": false,
+            "logEnabled": false
+          },
+          {
+            "type": "azure",
+            "event": "all",
+            "enabled": false,
+            "logEnabled": false,
+            "azureBoardId": "",
+            "azureBoardName": "",
+            "azureToolId": "",
+            "azureTeamId": "",
+            "azureTeamName": "",
+            "azureProjectName": "",
+            "azureProjectId": "",
+            "azurePriority": "",
+            "azureSprint": "",
+            "azureSprintId": "",
+            "azureWorkType": "",
+            "azureParentTicket": "",
+            "azurePrimaryAssignee": ""
+          },
+          {
+            "type": "github",
+            "event": "all",
+            "enabled": false,
+            "logEnabled": false,
+            "toolId": "",
+            "githubLabels": [],
+            "assignees": [],
+            "githubRepositoryId": "",
+            "githubIssueType": "",
+            "githubParentIssueId": ""
+          },
+          {
+            "type": "reports",
+            "enabled": false,
+            "reportFormats": [
+              "excel",
+              "pdf"
+            ],
+            "sendWhen": "success",
+            "applyTo": "security_scans",
+            "sendViaEmail": false,
+            "emailRecipients": [],
+            "includeCommitterEmails": false,
+            "emailSubject": "",
+            "emailMessage": "",
+            "sendViaSlack": false,
+            "slackToolId": "",
+            "slackChannels": [],
+            "sendViaTeams": false,
+            "teamsToolId": "",
+            "attachToJira": false,
+            "jiraToolId": "",
+            "attachToServiceNow": false,
+            "serviceNowToolId": ""
+          }
+        ],
+        "tags": [],
+        "active": true,
+        "dependencies": [],
+        "updatedAt": "2026-05-06T09:27:53.136Z",
+        "_id": "5ec7c8cedc73d971e2860b68"
+      },
+      {
+        "tool": {
+          "tool_identifier": "approval",
+          "configuration": {
+            "sendCustomMessage": true,
+            "message": "",
+            "contact": "",
+            "resolveChildPipelineArtifacts": true,
+            "resolveParallelProcessorArtifacts": true
+          },
+          "threshold": {
+            "type": "user-approval",
+            "value": {
+              "user": "67d2c7c8a9ae2fbc474a5071",
+              "email": "nchandru360@proton.me",
+              "approved": false,
+              "approved_on": null,
+              "denied": true,
+              "denied_on": "2026-06-09T06:15:02.577Z",
+              "message": "Rejected by Chandru Nallasivam2 (nchandru360@proton.me) with comment - This pipeline has been rejected during approval gate."
+            }
+          },
+          "job": null
+        },
+        "name": "approval gate",
+        "description": "",
+        "trigger": [],
+        "type": [
+          "interaction-gate"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": false,
+        "dependencies": [
+          "5ec7c8cedc73d971e2860b68"
+        ],
+        "updatedAt": "2026-06-09T05:45:52.240Z",
+        "_id": "6a27a890464fbab4a54ccec7"
+      },
+      {
+        "tool": {
+          "tool_identifier": "run_job",
+          "configuration": {
+            "scripts": [],
+            "environmentVariables": [],
+            "secretEnvironmentVariables": [],
+            "plugins": []
+          }
+        },
+        "name": "run job",
+        "description": "",
+        "trigger": [],
+        "type": [
+          "script"
+        ],
+        "orchestration_type": "standard",
+        "notification": [],
+        "tags": [],
+        "active": false,
+        "dependencies": [
+          "6a27a890464fbab4a54ccec7"
+        ],
+        "updatedAt": "2026-06-09T05:48:03.342Z",
+        "_id": "6a27a9132a7499a608f4af75"
+      }
+    ],
+    "run_count": 105,
+    "canvas_layout": {
+      "manual_layout_active": true,
+      "orientations": {
+        "vertical": {
+          "start": {
+            "x": 0,
+            "y": 30
+          },
+          "5ec7c8cedc73d971e2860b68": {
+            "x": 0,
+            "y": 360
+          },
+          "6a3d0466f79023bd013bc491": {
+            "x": -200,
+            "y": 720
+          },
+          "6a27a890464fbab4a54ccec7": {
+            "x": 200,
+            "y": 720
+          },
+          "6a27a9132a7499a608f4af75": {
+            "x": 220,
+            "y": 1036.6666666666665
+          },
+          "end": {
+            "x": 0,
+            "y": 1440
+          }
+        }
+      },
+      "updated_at": "2026-06-29T08:42:16.192Z"
+    }
+  },
+  "active": true,
+  "template": "5ec7c8cedc73d9532e860b67",
+  "templateIdentifier": "blank_pipeline_template",
+  "createdAt": "2026-02-09T03:57:59.051Z",
+  "updatedAt": "2026-06-30T13:41:57.203Z",
+  "__v": 36,
+  "owner_name": "Chandru Nallasivam2",
+  "lock": {
+    "status": "unlocked",
+    "updatedBy": "nchandru360@proton.me",
+    "updatedById": "67d2c7c8a9ae2fbc474a5071",
+    "updatedAt": "2026-06-05T02:40:19.770Z",
+    "unlockedAt": "2026-06-05T02:40:19.770Z"
+  },
+  "notification": [
+    {
+      "type": "email",
+      "addresses": [],
+      "event": "all",
+      "enabled": true,
+      "logEnabled": false,
+      "notifyTriggeredUser": true,
+      "manifestAttachment": {
+        "enabled": false,
+        "format": "json"
+      }
+    },
+    {
+      "type": "slack",
+      "channel": "",
+      "toolId": "",
+      "event": "finished",
+      "enabled": false,
+      "logEnabled": false
+    },
+    {
+      "type": "jira",
+      "event": "all",
+      "jiraBoard": "",
+      "jiraToolId": "",
+      "jiraProject": "",
+      "jiraPriority": "",
+      "jiraSprint": "",
+      "jiraParentTicket": "",
+      "jiraPrimaryAssignee": "",
+      "jiraSecondaryAssignees": [],
+      "jiraOpenStep": "",
+      "jiraClosureStep": "",
+      "enabled": false
+    },
+    {
+      "type": "teams",
+      "event": "all",
+      "toolId": "",
+      "enabled": false,
+      "logEnabled": false,
+      "teamsType": "webhook",
+      "teamsId": "",
+      "teamsName": "",
+      "channelId": "",
+      "channelName": ""
+    },
+    {
+      "type": "servicenow",
+      "event": "all",
+      "toolId": "",
+      "serviceNowUserId": "",
+      "serviceNowGroupId": "",
+      "enabled": false
+    },
+    {
+      "type": "gchat",
+      "event": "all",
+      "toolId": "",
+      "enabled": false,
+      "logEnabled": false
+    },
+    {
+      "type": "azure",
+      "event": "all",
+      "enabled": false,
+      "logEnabled": false,
+      "azureBoardId": "",
+      "azureBoardName": "",
+      "azureToolId": "",
+      "azureTeamId": "",
+      "azureTeamName": "",
+      "azureProjectName": "",
+      "azureProjectId": "",
+      "azurePriority": "",
+      "azureSprint": "",
+      "azureSprintId": "",
+      "azureWorkType": "",
+      "azureParentTicket": "",
+      "azurePrimaryAssignee": ""
+    },
+    {
+      "type": "github",
+      "event": "all",
+      "enabled": false,
+      "logEnabled": false,
+      "toolId": "",
+      "githubLabels": [],
+      "assignees": [],
+      "githubRepositoryId": "",
+      "githubIssueType": "",
+      "githubParentIssueId": ""
+    },
+    {
+      "type": "settings",
+      "sendStepLevelNotification": true,
+      "sendReportsWithNotifications": false,
+      "sendRuntimeExceededNotification": false,
+      "logEnabled": false,
+      "reportFormats": [
+        "pdf",
+        "excel"
+      ]
+    }
+  ],
+  "notificationRules": [],
+  "sendStepLevelNotification": true,
+  "parameters": [
+    {
+      "name": "opsera-release-name",
+      "value": "release-37.0.1-c0aa12f2-8",
+      "scope": "pipeline",
+      "inputType": "text",
+      "vaultEnabled": false,
+      "vaultKey": "",
+      "selectField": false,
+      "lookupListId": "",
+      "tags": [],
+      "account": "org109-acc",
+      "active": true,
+      "__v": 0
+    },
+    {
+      "name": "opsera-release-name2",
+      "value": "release-37.0.0-c6d2cb27-47",
+      "scope": "pipeline",
+      "inputType": "text",
+      "vaultEnabled": false,
+      "vaultKey": "",
+      "selectField": false,
+      "lookupListId": "",
+      "tags": [],
+      "account": "org109-acc",
+      "active": true,
+      "__v": 0
+    },
+    {
+      "name": "opsera-multipara",
+      "value": [
+        "PROD1, PROD2",
+        "PROD1,PROD2,PROD3,PROD4"
+      ],
+      "scope": "pipeline",
+      "inputType": "multi_select",
+      "vaultEnabled": false,
+      "vaultKey": "",
+      "selectField": false,
+      "lookupListId": "6a33a4821d0cc6a4040482e2",
+      "tags": [],
+      "account": "org109-acc",
+      "active": true,
+      "__v": 0
+    },
+    {
+      "name": "opsera-nc_test",
+      "value": "test1",
+      "scope": "pipeline",
+      "inputType": "text",
+      "vaultEnabled": false,
+      "vaultKey": "",
+      "selectField": false,
+      "lookupListId": "",
+      "tags": [],
+      "account": "org109-acc",
+      "active": true,
+      "__v": 0
+    }
+  ]
+}
