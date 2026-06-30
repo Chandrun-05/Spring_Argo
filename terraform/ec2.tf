@@ -39,3 +39,4 @@ resource "aws_instance" "web" {
 output "hello_world" {
   value = "Hello, World Validation backendstate"
 }
+
