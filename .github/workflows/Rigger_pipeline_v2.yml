@@ -1,0 +1,29 @@
+name: Trigger Opsera Pipeline
+
+on:
+  push:
+    branches:
+      - main   # triggers when PR is merged to main (push to main)
+
+jobs:
+  trigger-opsera:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Opsera Pipeline via API (v2)
+        shell: bash
+        env:
+          OPSERA_URL: https://app.opsera.io
+          PIPELINE_ID: 69895b4714eff3fcd03f6775
+          OPSERA_TOKEN: ${{ secrets.OPSERA_TOKEN }}
+
+        run: |
+          set -euo pipefail
+
+          echo "Triggering Opsera pipeline (v2)..."
+          echo "PipelineId: ${PIPELINE_ID}"
+
+          curl -sS --fail-with-body -v -X POST "${OPSERA_URL}/api/v2/actions" \
+            -H "Authorization: Bearer ${OPSERA_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{\"action\":\"run\",\"type\":\"pipeline\",\"version\":\"1\",\"target\":[\"${PIPELINE_ID}\"]}"
