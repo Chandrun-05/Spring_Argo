@@ -26,4 +26,4 @@ jobs:
           curl -sS --fail-with-body -v -X POST "${OPSERA_URL}/api/v2/actions" \
             -H "Authorization: Bearer ${OPSERA_TOKEN}" \
             -H "Content-Type: application/json" \
-            -d "{\"action\":\"run\",\"type\":\"pipeline\",\"version\":\"1\",\"target\":[\"${PIPELINE_ID}\"]}"
+            -d "{\"action\":\"run\",\"type\":\"pipeline\",\"version\":\"2\",\"target\":[\"${PIPELINE_ID}\"]}"
