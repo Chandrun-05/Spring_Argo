@@ -1,0 +1,21 @@
+{
+  "name": "Jira + Bitbucket Token-Rotation Lab",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.12" }
+  },
+  "forwardPorts": [8080, 7990, 7999],
+  "portsAttributes": {
+    "8080": { "label": "Jira",          "onAutoForward": "notify" },
+    "7990": { "label": "Bitbucket",     "onAutoForward": "notify" },
+    "7999": { "label": "Bitbucket-SSH", "onAutoForward": "silent" }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "hostRequirements": { "cpus": 4, "memory": "16gb", "storage": "32gb" },
+  "remoteEnv": {
+    "BB_LICENSE": "${localEnv:BB_LICENSE}",
+    "JIRA_LICENSE": "${localEnv:JIRA_LICENSE}"
+  }
+}
