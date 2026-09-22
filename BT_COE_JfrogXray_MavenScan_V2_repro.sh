@@ -40,4 +40,6 @@ echo "⚠️ Medium=0"
 echo "ℹ️ Low=0"
 echo "✅ No Critical, High or Medium vulnerabilities found."
 
+cp "${TMPDIR_RESULT}/results.json" "${WORKSPACE}/scan_output.json"
+
 exit 0
