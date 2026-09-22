@@ -40,6 +40,15 @@ echo "⚠️ Medium=0"
 echo "ℹ️ Low=0"
 echo "✅ No Critical, High or Medium vulnerabilities found."
 
-cp "${TMPDIR_RESULT}/results.json" "${WORKSPACE}/scan_output.json"
+OUT_DIR="${WORKSPACE:-$(pwd)}"
+cp "${TMPDIR_RESULT}/results.json" "${OUT_DIR}/scan_output.json"
+
+echo "===== DIAG ====="
+echo "WORKSPACE='${WORKSPACE}'"
+echo "PWD='$(pwd)'"
+echo "OUT_DIR='${OUT_DIR}'"
+ls -l "${OUT_DIR}/scan_output.json" || echo "scan_output.json NOT FOUND"
+ls -l /scan_output.json 2>/dev/null && echo "!! landed at filesystem root — WORKSPACE was empty"
+echo "================"
 
 exit 0
